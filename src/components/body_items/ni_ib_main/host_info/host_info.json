@@ -1,0 +1,19 @@
+{
+    "contacts":[
+        {
+            "name": "qq",
+            "url" : "//wpa.qq.com/msgrd?v=3&amp;uin=3600429897&amp;site=qq&amp;menu=yes",
+            "qcode": true
+        },
+        {
+            "name": "wechat",
+            "url" : null,
+            "qcode": true
+        },
+        {
+            "name": "github",
+            "url" : "",
+            "qcode": false
+        }
+    ]
+}

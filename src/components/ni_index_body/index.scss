@@ -1,0 +1,145 @@
+#ni_index_body{
+    width: 100%;
+    background-color: white;
+    section{
+        overflow-y: scroll;
+        height: 100%;
+        font-family: Baskerville,Georgia,"Liberation Serif","Source Han Serif Semibold",Kaiti SC,STKaiti,AR PL UKai CN,AR PL UKai HK,AR PL UKai TW,AR PL UKai TW MBE,AR PL KaitiM GB,KaiTi,KaiTi_GB2312,DFKai-SB,TW\\-Kai,serif;
+        .ni_ib_main_right{
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            .hot_articals{
+                flex-grow: 1;
+            }
+        }
+    }
+    section::-webkit-scrollbar {
+        width: 2px;
+        height: 0;
+        color: transparent;
+    }
+}
+#ni_news{
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px 8px 40px 8px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 5px 0px #aaa;
+}
+.container{
+    width:90vw;
+    margin: auto;
+    .ni_ib_main{
+        display:flex;
+        margin-top: 30px;
+        .artical{
+            flex-grow: 1;
+        }
+    }
+}
+.pic-text{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+.news-card{
+    flex-grow: 1;
+    margin-left: 0px;  
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: center;
+    -ms-flex-line-pack: justify;
+    align-content: space-between;
+
+    .card-item{
+        width: 48%;
+        height:28vw;
+        background-color:wheat;
+        border-radius: 5px;
+    }
+}
+.carousel {
+    position: relative;
+    height:62.5vw;
+    width: 100%;
+}
+
+@media screen and (max-width:990px){
+    .pic-text{
+        flex-wrap: wrap;
+    }
+    .news-card{
+        width:100%;
+        justify-content: space-between;
+        .card-item{
+            margin-top: 1rem;
+        }
+    }
+    .ni_ib_main_right{
+        display:none;
+    }
+    .page_key{
+        max-width: 100%;
+        overflow-x:scroll;
+    }
+    .page_key::-webkit-scrollbar {
+        width: 2px;
+        height: 0;
+        color: transparent;
+    }
+}
+
+@media screen and (min-width:990px){
+    .carousel{
+        height: 400px;
+        width: 640px;
+        min-width: 640px;
+    }
+    .news-card{
+        margin-left: 20px;  
+        .card-item{
+            width: 288px;
+            height:180px;
+        }
+    }
+    .card-item:nth-child(3), .card-item:nth-child(4), .card-item:nth-child(5), .card-item:nth-child(6){
+        display:none;
+    }
+    .ni_ib_main_right{
+        display:block;
+    }
+}
+@media screen and (min-width:1160px){
+    .container{
+        width:1140px
+    }
+}
+
+@media screen and (min-width:1280px){
+    .container{
+        width:1260px
+    }
+    .news-card{
+        justify-content:space-between;
+    }
+    .card-item:nth-child(3), .card-item:nth-child(4){
+        display:block;
+    }
+}
+@media screen and (min-width:1560px){
+    .container{
+        width:1550px
+    }
+    .card-item:nth-child(5), .card-item:nth-child(6){
+        display:block;
+    }
+    .artical{
+        columns: 2; // 默认为4
+    }
+}
+
+
+
+

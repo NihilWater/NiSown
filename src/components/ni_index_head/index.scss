@@ -1,0 +1,85 @@
+#ni_index_head {
+    max-height: 80vw;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    .dynamic_img {
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        transition: all 0.3s , filter 0.1s;
+        *{
+            transition: all 0.3s , filter 0.1s;
+            position: absolute;
+        }
+        .p1{
+            height: 110%;
+            width: auto;
+            right: -20%;
+            top: -5%;
+        }
+        .back_img{
+            background-size: auto 80vw;
+            width: 100%;
+            height:100%;
+        }
+    }
+    .main{
+        width: 100%;
+        height: 100vh;
+        background-color: black;
+    }
+}
+#motto{
+    left: calc(50% - 30rem);
+    top: 50%;
+    width:40rem;
+    height: 300px;
+    color: white;
+    font-size: 2.4rem;
+    p{
+        display: block;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+        width: 40rem;
+        padding-left: 20px;
+        
+    }
+}
+#ni_index_head_after{
+    max-height: 80vw;
+    position: relative;
+    height: 100vh;
+    pointer-events: none;
+    transition: all 1s cubic-bezier(0, 0, 0, 1);
+    background: linear-gradient(180deg,rgba(255,255,255,0.0) 80%,rgba(255,255,255,0.5)95%,rgba(255,255,255,0.8));
+}
+
+
+// 由于这是一个 fixed 的头部，主题会自动把ni_index_head 转化为fixed
+@media screen and (min-width:888px){
+    #ni_index_body {
+        height: 100vh;
+        position: fixed;
+    }
+}
+
+@media screen and (max-width:888px){
+    #ni_index_head {
+        position: absolute;
+        .dynamic_img {
+            .p1 {
+                left:0;
+            }
+            .back_img{
+                background-size: auto 100vh;
+            }
+        }
+    }
+    #ni_index_body {
+        position: absolute;
+        height:auto;
+    }
+    #motto{
+        display:none;
+    }
+}

@@ -1,0 +1,60 @@
+.carousel div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transition: all 1s;
+    opacity: 0;
+    border-radius: 10px;
+}
+.carousel div>div{
+    opacity: 1;
+    color:white;
+    font-size:1.2rem;
+    transition: all 0.3s;
+    *{
+        margin:20px;
+    }
+    p{
+        height:0;
+        overflow: hidden;
+        font-size: 1.1rem;
+    }
+}
+.carousel:hover {
+    >div{
+         background-color:rgba(0,0,0,0.5);
+        >div{
+            opacity: 1;
+            color:white;
+            font-size:2rem;
+            background: rgba(0,0,0,0.4);
+            p{
+                height: auto;
+            }
+        }
+    }
+}
+.carousel ul {
+    position: absolute;
+    bottom: 8%;
+    right: 20%;
+}
+.carousel ul li {
+    list-style: none;
+    display: inline-block;
+    height: 4px;
+    width: 48px;
+    max-width: 20%;
+    border-radius: 1rem;
+    padding: 2px;
+    margin: 2px;
+    background-color: white;
+    opacity: 0.7;
+    cursor: pointer;
+}
+.carousel ul li:hover {
+    background-color: lightblue;
+}

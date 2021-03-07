@@ -1,0 +1,112 @@
+.artical_item{
+    width: 90%;
+    background-color: rgba(255,255,255,0.8);
+    margin: 0px auto 10px 0;
+    padding: 20px;
+    border-radius: 10px;
+    .main_text{
+        position: relative;
+        h2{
+            color:#ff9999;
+        }
+        p{
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 4;
+            overflow: hidden;
+        }
+        >div{
+            position: absolute;
+            justify-content: space-between;
+            align-items: center;
+            bottom: 0;
+            width: 100%;
+        }
+    }
+    .info{
+        display:flex;
+        width:240px;
+        >div{
+            width: 33.33%;
+        }
+    }
+    .img{
+        background-position: center;
+        background-size: cover;
+    }
+    img{
+        display:none;
+    }
+}
+.artical_item:hover{
+    transform: scale(1.01);
+    box-shadow: 2vw 0 2vw -2vw #000, -2vw 0 2vw -2vw #000;
+}
+@media screen and (max-width:990px){
+    .artical_item{
+        margin: 10px auto;
+        padding: 10px 10px 100px 10px;
+        img{
+            width:100%;
+            height:auto;
+            display:block;
+        }
+        .main_text{
+            >div{
+                bottom: -70px;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:990px){
+    .artical_item{
+        display:flex;
+        .img{
+            width:288px;
+            height: 180px;
+            min-width: 288px;
+            min-height: 180px;
+        }
+        .main_text{
+            padding:12px;
+            min-height: 100%;
+            flex-grow: 1;
+        }
+    }
+    .artical_item:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+@media screen and (min-width:1560px){
+    .artical_item{
+        break-inside: avoid;
+        flex-wrap: wrap;
+        margin-top: 1.4rem;
+        padding: 10px 10px 100px 10px;
+        .img{
+            width: 100%;
+            height: auto;
+            min-height: unset;
+        }
+        img{
+            width:100%;
+            height:auto;
+            display:block;
+        }
+        .main_text {
+            >div{
+                bottom: -70px;
+                width: 100%;
+                flex-wrap: wrap;
+            }
+        }
+    }
+    .artical_item:nth-of-type(even) {
+        flex-direction: row;
+    }
+    
+}

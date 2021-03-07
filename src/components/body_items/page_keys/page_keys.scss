@@ -1,0 +1,13 @@
+.page_key{
+    display: flex;
+    li{
+        background-color: #ff9999;
+        padding:5px;
+        margin: 0.5rem;
+        color: #fff;
+        cursor:pointer;
+    }
+    li.current{
+        background-color: #ffc8c8;
+    }
+}
