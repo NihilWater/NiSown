@@ -3,6 +3,10 @@ bin-debug/
 bin-release/
 [Oo]bj/
 [Bb]in/
+build/
+node_modules/
+.eslintcache
+
 
 # Other files and folders
 .settings/
