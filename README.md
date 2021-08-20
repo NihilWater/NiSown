@@ -17,6 +17,6 @@
 ## 更新说明 
 - 2021 年 3 月 7 日：完成前端首页整体布局
     ![首页整体布局](./readme/pic1.png) 
-    可以通过访问[http://nihilwater.top/](http://nihilwater.top/) 进行访问
+    可以通过访问[https://nihilwater.github.io/](https://nihilwater.github.io/) 进行访问
 ## 版权
     这套前端，我将完全的开源出去，免费商用！！，欢迎大家可以一起来丰富它，如果觉得有用，点一个星星吧。
