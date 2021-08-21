@@ -42,9 +42,8 @@ jobs:
       run: CI=false && npm run build
       shell: bash
       
-    - name: Deploy 🚀
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: gh-pages # The branch the action should deploy to.
-        FOLDER: build # The folder the action should deploy.
+        github_token: ${{ secrets.TOKEN1 }}
+        publish_dir: ./public
