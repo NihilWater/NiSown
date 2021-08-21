@@ -29,8 +29,10 @@ jobs:
       run: npm cache clean --force
     - name: clean cache1
       run: rm -rf node_modules
+      shell: bash
     - name: clean cache2
       run: rm -rf package-lock.json
+      shell: bash
     - name: Install Packages
       run: npm install
     - name: Build page
