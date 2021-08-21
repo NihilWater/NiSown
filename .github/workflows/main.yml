@@ -15,29 +15,28 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-#     - name: Cache node modules
-#       uses: actions/cache@v1
-#       with:
-#         path: node_modules
-#         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-#         restore-keys: |
-#           ${{ runner.OS }}-build-${{ env.cache-name }}-
-#           ${{ runner.OS }}-build-
-#           ${{ runner.OS }}-
- 
-    - name: clean cache
-      run: npm cache clean --force
-    - name: clean cache1
-      run: rm -rf node_modules
-      shell: bash
-    - name: clean cache2
-      run: rm -rf package-lock.json
-      shell: bash
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: node_modules
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.OS }}-build-${{ env.cache-name }}-
+          ${{ runner.OS }}-build-
+          ${{ runner.OS }}-
+# 以下代码用于清空缓存！！！
+    # - name: clean cache
+    #   run: npm cache clean --force
+    # - name: clean cache1
+    #   run: rm -rf node_modules
+    #   shell: bash
+    # - name: clean cache2
+    #   run: rm -rf package-lock.json
+    #   shell: bash
+
     - name: Install Packages
       run: npm install
-#     - name: make CI false
-#       run: export CI=false
-#       shell: bash
+
     - name: Build page
       run: CI=false && npm run build
       shell: bash
