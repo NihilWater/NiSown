@@ -46,4 +46,4 @@ jobs:
       with:
         personal_token: ${{ secrets.PERSONAL_TOKEN }}
         publish_dir: ./build
-        external_repository: /NihilWater/NihilWater.github.io.git
+        external_repository: /NihilWater/NihilWater.github.io
