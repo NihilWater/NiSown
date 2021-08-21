@@ -35,6 +35,9 @@ jobs:
       shell: bash
     - name: Install Packages
       run: npm install
+    - name: make CI false
+      run: export CI=false
+      shell: bash
     - name: Build page
       run: npm run build
       
