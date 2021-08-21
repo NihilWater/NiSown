@@ -35,12 +35,13 @@ jobs:
       shell: bash
     - name: Install Packages
       run: npm install
-    - name: make CI false
-      run: export CI=false
-      shell: bash
+#     - name: make CI false
+#       run: export CI=false
+#       shell: bash
     - name: Build page
       run: npm run build
-      
+      env:
+        process.env.CI : false
       
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
