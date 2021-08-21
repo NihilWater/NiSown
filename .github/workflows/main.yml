@@ -26,10 +26,11 @@ jobs:
 #           ${{ runner.OS }}-
  
     - name: clean cache
-      run: |
-        npm cache clean --force
-        rm -rf node_modules
-        rm -rf package-lock.json
+      run: npm cache clean --force
+    - name: clean cache1
+      run: rm -rf node_modules
+    - name: clean cache2
+      run: rm -rf package-lock.json
     - name: Install Packages
       run: npm install
     - name: Build page
