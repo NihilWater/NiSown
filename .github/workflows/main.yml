@@ -39,9 +39,7 @@ jobs:
 #       run: export CI=false
 #       shell: bash
     - name: Build page
-      run: npm run build
-      env:
-        process.env.CI : false
+      run: CI=false && npm run build
       
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
