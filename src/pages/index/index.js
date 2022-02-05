@@ -6,9 +6,6 @@ import NiIndexBody from '../../components/ni_index_body/ni_index_body';
 
 class Index extends React.Component {
 
-    constructor(props){
-        super(props);
-    }
     componentDidMount(){
         let is_top = false;
         document.getElementById("ni_index_body_s").addEventListener("wheel", function (e) {

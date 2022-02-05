@@ -4,9 +4,8 @@ import Snow_img from "./img/ParticleSmoke.png";
 export var snows_stop = {key:true};
 
 export class Sownback extends React.Component {
-    constructor(props){
-        super(props);
-    }
+
+    
     componentDidMount = () =>{
         var that = this;
         // 雪花大小基准
@@ -62,7 +61,7 @@ export class Sownback extends React.Component {
                 if(!snows_stop.key){
                     gii += 1;
                     c.clearRect(0, 0, a.width, a.height);
-                    if(gii==gi){ // 当gii = gi 时才会向全局的画布中添加一个雪花
+                    if(gii===gi){ // 当gii = gi 时才会向全局的画布中添加一个雪花
                         createSonw();
                         gii=0;
                     }

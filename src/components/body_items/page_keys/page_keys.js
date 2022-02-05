@@ -31,19 +31,19 @@ class PageKeys extends React.Component {
         console.log(i, j)
         // 用来计数
         let count =1;
-        while(!(i==0 && j==this.props.maxPage+1)){
+        while(!(i===0 && j===this.props.maxPage+1)){
             // 向后找一个
             if (j<=this.props.maxPage){
                 j++;
                 count++;
             }
-            if(count==10) break;
+            if(count===10) break;
             // 向前找一个
             if(i>=1){
                 i--;
                 count++;
             }
-            if(count==10) break;
+            if(count===10) break;
         }
         console.log(i, j);
         return Array.from(Array( j - i - 1 )).map(( e, ii ) => i + 1 + ii);
@@ -63,11 +63,11 @@ class PageKeys extends React.Component {
 
     render(){
         return (<ul className = "page_key">
-            <li className={this.state.currentPage == 1?"current":""} onClick={()=>this.changePage(this.state.currentPage - 1)}>&lt;</li>
+            <li className={this.state.currentPage === 1?"current":""} onClick={()=>this.changePage(this.state.currentPage - 1)}>&lt;</li>
                 {this.state.page_list.map( item =>
-                    <li className={this.state.currentPage == item?"current":""} onClick={()=>this.changePage(item)}>{item}</li>
+                    <li className={this.state.currentPage === item?"current":""} onClick={()=>this.changePage(item)}>{item}</li>
                 )}
-            <li className={this.state.currentPage == this.props.maxPage?"current":""} onClick={()=>this.changePage(this.state.currentPage - (-1))}>&gt;</li>
+            <li className={this.state.currentPage === this.props.maxPage?"current":""} onClick={()=>this.changePage(this.state.currentPage - (-1))}>&gt;</li>
         </ul>)
     }
 }
