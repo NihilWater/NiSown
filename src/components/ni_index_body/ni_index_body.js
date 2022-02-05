@@ -70,7 +70,6 @@ class NiIndexBody extends React.Component {
                                 <HotArtical />
                             </div>
                         </div>
-                        <footer>备案号: <a target="blank" href="https://beian.miit.gov.cn/">鲁ICP备19060335号-2</a></footer>
                     </div>
                 </section>
             </div>

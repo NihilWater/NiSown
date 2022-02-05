@@ -13,6 +13,8 @@ class Index extends React.Component {
                 document.getElementById("ni_index_head_after").style.height='100vh';
             }else if(e.deltaY > 0 && document.body.clientWidth>888){
                 document.getElementById("ni_index_head_after").style.height='0';
+            }else if(document.body.clientWidth<=888){
+                document.getElementById("ni_index_head_after").style.height='100vh';
             }
             is_top = false;
             if(this.scrollTop === 0 ){
