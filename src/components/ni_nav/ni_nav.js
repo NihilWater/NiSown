@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.scss";
 import NavButton from "../svg_anime/nav_button/nav_button";
+import { Link } from "react-router-dom";
 
 
 class NiNav extends React.Component {
@@ -18,32 +19,32 @@ class NiNav extends React.Component {
             <div className="navigate">
                 <div className={ this.state.isNavOpened? "navmainbody navopen":"navmainbody"}>
                     <ul className="navmain" >
-                        <li><a href="#">HOME</a></li>
+                        <li><Link href="#">HOME</Link></li>
                         <li>
-                            <a href="#">世空间</a>
+                            <Link href="#">世空间</Link>
                             <ol className="navsecond" id="xykj">
-                                <li><a href="">杂文小记</a></li>
-                                <li><a href="">世界好棒</a></li>
+                                <li><Link href="#">杂文小记</Link></li>
+                                <li><Link href="#">世界好棒</Link></li>
                             </ol>
                         </li>
                         <li>
-                            <a href="#">代码仓库</a>
+                            <Link href="#">代码仓库</Link>
                             <ol className="navsecond" id="dmck">
-                                <li><a href="">Web前端</a></li>
-                                <li><a href="">花哨后端</a></li>
-                                <li><a href="">数据结构</a></li>
-                                <li><a href="">深度学习</a></li>
-                                <li><a href="">操作系统</a></li>
-                                <li><a href="">数学相关</a></li>
-                                <li><a href="">小小程序</a></li>
+                                <li><Link href="#">Web前端</Link></li>
+                                <li><Link href="#">花哨后端</Link></li>
+                                <li><Link href="#">数据结构</Link></li>
+                                <li><Link href="#">深度学习</Link></li>
+                                <li><Link href="#">操作系统</Link></li>
+                                <li><Link href="#">数学相关</Link></li>
+                                <li><Link href="#">小小程序</Link></li>
                             </ol>
                         </li>
                         <li>
-                            <a href="#">友情链接</a>
+                            <Link href="#">友情链接</Link>
                         </li>
                         <li className="liblank"></li>
                         <li>
-                            <a href="#">About me</a>
+                            <Link href="#">About me</Link>
                         </li>
                         <li className="navsearch">
                             <form className="search-form">
