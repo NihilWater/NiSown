@@ -49,7 +49,11 @@
 
 @media screen and (max-width:990px){
     .column_item{
-        padding: 10px 10px 5px 10px;
+        width: 100%;
+        .artical_item{
+            padding: 5%;
+            width:90%;
+        }
         img{
             width:100%;
             height:auto;

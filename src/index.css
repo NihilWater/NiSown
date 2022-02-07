@@ -51,3 +51,12 @@ code {
 .ni_buttom_primary:focus {
   outline: unset;
 }
+
+@media screen and (max-width:600px){
+  .ni_buttom_primary{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    margin: 10px;
+  }
+}
