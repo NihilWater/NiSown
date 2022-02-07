@@ -88,11 +88,13 @@
 }
 
 @media screen and (min-width:1560px){
+    .column_item{
+        padding: 10px 10px 5px 10px;
+    }
     .artical_item{
         break-inside: avoid;
         flex-wrap: wrap;
         margin-top: 1.4rem;
-        padding: 10px 10px 5px 10px;
         .img{
             width: 100%;
             height: auto;
