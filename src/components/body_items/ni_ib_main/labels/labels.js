@@ -28,7 +28,7 @@ class Labels extends React.Component{
         return (
             <div className= "labels">
                 {this.state.labels.map(item =>{
-                    return <div style={{backgroundColor: colors.colors[Math.floor(Math.random()*4)]}}>{item}</div>
+                    return <div style={{backgroundColor: colors.colors[Math.floor(Math.random()*4)]}}>{item.label}</div>
                 })}
             </div>
         )
