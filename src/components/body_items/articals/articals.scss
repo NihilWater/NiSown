@@ -1,3 +1,5 @@
+@import '../markdown/markdown.scss';
+
 .column_item{
     width: 90%;
     padding: 10px auto;
@@ -45,6 +47,7 @@
     background-color: rgba(255,255,255,0.8);
     padding: 20px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 @media screen and (max-width:990px){

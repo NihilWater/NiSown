@@ -19,6 +19,12 @@
         height: 0;
         color: transparent;
     }
+    .goback{
+        background: #f27a0032;
+        transform: translateY(3rem);
+        display: inline-block;
+        font-size: 1.6rem;
+    }
 }
 #ni_news{
     background-color: rgba(255, 255, 255, 0.7);
@@ -66,7 +72,7 @@
     width: 100%;
 }
 
-@media screen and (max-width:990px){
+@media screen and (max-width:1060px){
     .pic-text{
         flex-wrap: wrap;
     }
@@ -91,7 +97,7 @@
     }
 }
 
-@media screen and (min-width:990px){
+@media screen and (min-width:1060px){
     .carousel{
         height: 400px;
         width: 640px;
