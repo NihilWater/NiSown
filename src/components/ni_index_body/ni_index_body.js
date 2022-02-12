@@ -1,6 +1,6 @@
 import React from 'react';
 import "./index.scss";
-import "highlight.js"
+import 'highlight.js/styles/nord.css';
 import axios from 'axios';
 import HostInfo from "../body_items/ni_ib_main/host_info/host_info";
 import Articals from "../body_items/articals/articals";
