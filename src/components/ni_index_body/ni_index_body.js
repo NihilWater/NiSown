@@ -16,12 +16,34 @@ class NiIndexBody extends React.Component {
         articals: [],        // 文章列表数据
         isMarkdown: false,
         html: <></>,
-        currentPage:1
+        currentPage: 1,
+        href: '/',
     }
 
     /* 获取数据 */
     componentDidMount() {
-        this.getArticalList(1);
+        console.log(this.props.href)
+        if (this.props.href.articalid) {
+            this.readArtical(`${this.props.href.topic}/${this.props.href.subtopic}/${this.props.href.articalid}`)
+        } else {
+            this.getArticalList(1);
+        }
+    }
+
+    componentWillReceiveProps(newProps) {
+        console.log(this.props.history.location.pathname)
+        console.log(newProps.history.location.pathname)
+        if (this.props.history.location.pathname !== this.state.href) {
+            if (newProps.history.location.pathname === '/') {
+                this.getArticalList(this.state.currentPage);
+                this.setState({
+                    href: '/',
+                    isMarkdown: false
+                })
+            } else {
+                this.readArtical(newProps.history.location.pathname.substr(9))
+            }
+        }
     }
 
     /* 获取文章数据方法 */
@@ -43,7 +65,6 @@ class NiIndexBody extends React.Component {
 
     /* 点击查看某一片文章时发生的回调方法 */
     readArtical = (path) => {
-        console.log("124")
         let that = this;
         axios({
             method: "GET",
@@ -54,20 +75,28 @@ class NiIndexBody extends React.Component {
             console.log(res)
             that.setState({
                 isMarkdown: true,
-                html: res.data
+                html: res.data,
+                href: path
             })
         })
     }
 
+    /* 点击查看莫一篇文章触发事件 */
+    onReadClick = (path) => {
+        console.log(path)
+        this.props.history.push(`/artical/${path}`)
+        this.readArtical(path)
+    }
+
     /* 返回到主页 */
-    backArticals = ()=>{
+    backArticals = () => {
+        this.props.history.goBack()
         this.setState({
             isMarkdown: false
         })
     }
 
     render() {
-
         return (
             <div id="ni_index_body">
                 <section id="ni_index_body_s">
@@ -91,7 +120,7 @@ class NiIndexBody extends React.Component {
                             <div style={{ width: '100%' }}>
                                 {this.state.isMarkdown && <div class="goback" onClick={this.backArticals}>&lt;&lt;&lt;返回</div>}
                                 {this.state.isMarkdown ? <div className='markdown' dangerouslySetInnerHTML={{ __html: this.state.html }}></div>
-                                    : <div class="artical"><Articals data={this.state.articals} callback={this.readArtical} /></div>}
+                                    : <div class="artical"><Articals data={this.state.articals} callback={this.onReadClick} /></div>}
                                 {!this.state.isMarkdown && <PageKeys currentPage={this.state.currentPage} maxPage="50" callback={this.getArticalList} />}
                             </div>
                             <div class="ni_ib_main_right">

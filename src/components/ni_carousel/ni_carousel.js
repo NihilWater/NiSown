@@ -36,6 +36,8 @@ class NiCarousel extends React.Component {
         /* 获取轮播图内容 */
         generateCarousel(id){
             let that = this;
+            console.log("qnote1")
+            console.log(id)
             axios({
                 method:"GET",
                 url: "/json/news.json",
@@ -68,13 +70,14 @@ class NiCarousel extends React.Component {
                         ]),
                     [id + "Size"]: res.data.length,      // 轮播图元素数目
                     [id + 'Current']: 0           // 当前显示的轮图
+                }, ()=>{
+                    console.log("======success")
+                    setTimeout(() =>{
+                        that.state[id +'RealItems'] = document.getElementById(id + "_0").parentNode.childNodes;
+                        console.log(that.state[id +'RealItems']);
+                    }, 1000);
                 })
                 // 将列表里的虚拟dom换成真的，方便之后的dom 操作
-                setTimeout(() =>{
-                    that.state[id +'RealItems'] = document.getElementById(id + "_0").parentNode.childNodes;
-                    console.log(that.state[id +'RealItems']);
-                }, 1000);
-    
                 // 设置自动切换
                 setInterval(()=>{
                     // 让轮播图往后走一页，如果到里最后一页就从头开始
@@ -87,6 +90,9 @@ class NiCarousel extends React.Component {
                     // 调用切换轮播图算法
                     that.changeCarouselTo(id, carouselTemp);
                 }, 3000)
+            }).catch((err)=>{
+                console.log("=========error")
+                console.log(err)
             })
         }
         
