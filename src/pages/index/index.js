@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.scss';
 import NiIndexHead from '../../components/ni_index_head/ni_index_head';
-import {withRouter} from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import NiNav from '../../components/ni_nav/ni_nav';
 import NiIndexBody from '../../components/ni_index_body/ni_index_body';
 
@@ -28,7 +28,7 @@ class Index extends React.Component {
         return <div id="ni_index">
             <NiNav />
             <NiIndexHead />
-            <NiIndexBody href={this.props.match.params} history={this.props.history}/>
+            <NiIndexBody href={this.props.match.params} history={this.props.history} />
         </div>
     }
 }

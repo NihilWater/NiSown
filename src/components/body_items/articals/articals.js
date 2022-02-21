@@ -4,7 +4,7 @@ import "./articals.scss"
 
 class Artical extends React.Component {
 
-    readArtical = (path)=>{
+    readArtical = (path) => {
         this.props.callback(path);
     }
 
@@ -13,7 +13,7 @@ class Artical extends React.Component {
             return (<div className='column_item'>
                 <div class="artical_item">
                     <div style={{ backgroundImage: "url(" + item.img + ")" }} class="img">
-                        <img src={item.img} />
+                        {item.img !== '' && <img src={item.img} />}
                     </div>
                     <div class="main_text">
                         <h2>{item.title}</h2>
