@@ -1,1 +1,1 @@
-{"topicals":[{"topical":"ai","subTopical":["BoxInst"]},{"topical":"nisown","subTopical":["1-基础","2-API 接口"]},{"topical":"unity","subTopical":["1-基础"]}]}
+{"topicals":[{"topical":"ai","subTopical":["1-pytorch","2-实例分割","3-弱监督实例分割","BoxInst"]},{"topical":"docker","subTopical":["1-基础"]},{"topical":"nisown","subTopical":["1-基础","2-API 接口"]},{"topical":"unity","subTopical":["1-基础"]}]}

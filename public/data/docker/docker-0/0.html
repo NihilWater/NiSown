@@ -1,0 +1,40 @@
+<h1>Docker安装</h1>
+<blockquote>
+<p>参考地址 <a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></p>
+</blockquote>
+<br>
+<h2>docker安装</h2>
+<pre class="hljs"><code><span class="hljs-comment"># 删除已安装的 docker</span>
+sudo yum remove docker \
+                docker-client \
+                docker-client-latest \
+                docker-common \
+                docker-latest \
+                docker-latest-logrotate \
+                docker-logrotate \
+                docker-engine
+
+
+<span class="hljs-comment"># 安装yum-utils包, 设置docker 源</span>
+sudo yum install -y yum-utils
+sudo yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+<span class="hljs-comment"># 安装 docker</span>
+sudo yum install docker-ce docker-ce-cli containerd.io
+
+<span class="hljs-comment"># 设置镜像</span>
+<span class="hljs-built_in">echo</span> -e <span class="hljs-string">&quot;{\n\t\&quot;registry-mirrors\&quot;: [\&quot;http://hub-mirror.c.163.com\&quot;]\n}&quot;</span> &gt; /etc/docker/daemon.json
+<span class="hljs-comment"># echo -e &quot;{\n\t\&quot;registry-mirrors\&quot;: [\&quot;https://docker.mirrors.ustc.edu.cn\&quot;]\n}&quot; &gt; /etc/docker/daemon.json</span>
+<span class="hljs-comment"># echo -e &quot;{\n\t\&quot;registry-mirrors\&quot;: [\&quot;https://registry.docker-cn.com\&quot;]\n}&quot; &gt; /etc/docker/daemon.json</span>
+<span class="hljs-comment"># echo -e &quot;{\n\t\&quot;registry-mirrors\&quot;: [\&quot;https://mirror.ccs.tencentyun.com\&quot;]\n}&quot; &gt; /etc/docker/daemon.json</span>
+<span class="hljs-comment"># echo -e &quot;{\n\t\&quot;registry-mirrors\&quot;:[\&quot;https://ung2thfc.mirror.aliyuncs.com\&quot;]\n}&quot; &gt; /etc/docker/daemon.json</span>
+
+<span class="hljs-comment"># 启动docker</span>
+sudo systemctl start docker
+
+<span class="hljs-comment"># 查看docker 版本</span>
+docker version
+
+</code></pre>
