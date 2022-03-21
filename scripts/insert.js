@@ -20,31 +20,35 @@ if( ! fs.existsSync(org_file) ){
 // 文件存在时继续
 else{
     let state = fs.statSync(org_file)
-    let i = 0;
+    let isFind = 0;
+    let position = 0;
     let org_path = path.dirname(org_file)
     if(state.isDirectory(org_file)){
-        i = 1;
-        fs.writeFileSync(org_file + "\\00-" + file_name + ".md", '#'+file_name);
+        isFind = 1;
         org_path = org_file
     }
-
     // 读取所有的文件
     let articals = fs.readdirSync(org_path);
-    for(; i<62*62 && i<=articals.length; i++){
+    for(let i = 0; i<62*62 && i<articals.length; i++){
         console.log(articals[i])
         if(articals[i].endsWith('.md')){
             // 重新命名 
-            let first = parseInt(i/62); 
-            let last = i%62;
-            let new_name = `${first}${last}-${articals[i].substring(2, articals[i].length)}`
-            fs.rename(path.join(org_file, articals[i]), new_name, ()=>{});
+            let first = parseInt((i+isFind)/62); 
+            let last = (i+isFind)%62;
+            let new_name = `${first}${last}-${articals[i].substring(3, articals[i].length)}`
+            fs.rename(
+                path.join(org_path, articals[i]), 
+                path.join(org_path, new_name), ()=>{});
         }
         if(org_file.endsWith(articals[i])){
-            i = i + 1;
-            let first = parseInt(i/62); 
-            let last = i%62;
-            fs.writeFileSync(`${first}${last}-` + file_name + ".md", '#'+file_name);
+            isFind = 1;
+            position = i+1;
         }
     }
+    let first = parseInt(position/62); 
+    let last = position%62;
+    let new_name = `${first}${last}-${file_name}.md`
+
+    fs.writeFileSync(path.join(org_path, new_name), '# '+file_name);
 }
 

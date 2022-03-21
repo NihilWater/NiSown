@@ -63,7 +63,7 @@ const resetMarkdown = function () {
                 }
                 articals.forEach((artical, index2) => {
                     if (artical.endsWith('.md')) {
-                        let title = artical.substring(2, artical.length - 3);
+                        let title = artical.substring(3, artical.length - 3);
                         mdList.push({
                             title,
                             'href': dir + '/' + dir + '-' + index1 + '/' + index2,
@@ -80,7 +80,7 @@ const resetMarkdown = function () {
                             "commend": 0,
                             "watch": 0,
                             "evaluate": 0,
-                            "date": stat.ctime
+                            "date": stat.mtime
                         })
                         let context = md.render(markdown_context);
                         fs.writeFileSync(outDataPathForFs + dir + '/' + dir + '-' + index1 + '/' + index2 + ".html", context, encode = 'UTF-8', flag = 'w');
@@ -105,7 +105,7 @@ const resetMarkdown = function () {
     fs.writeFileSync(topicalOutJsonPath, JSON.stringify(topicalObj));
 
     // 写入 主页文章中 根据时间排序的文章
-    articalList.sort((a, b) => { return a.date.getTime() - b.date.getTime() });
+    articalList.sort((a, b) => { return b.date.getTime() - a.date.getTime() });
     let index3 = 0;
     let pageNum = 1;
     while (index3 < articalList.length) {
