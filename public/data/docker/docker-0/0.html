@@ -1,4 +1,17 @@
 <h1>Docker安装</h1>
+<h2>Docker的意义</h2>
+<p>传统的虚拟机存在着一些弊病。</p>
+<ol>
+<li>虚拟机主体庞大：有时甚至大于你要在虚拟机上运行的应用。</li>
+<li>启动时间长：虚拟机启动需要走完整的linux启动流程。</li>
+<li>结构冗余：如果需要使用多个虚拟机，则其中操作系统部分虽然是一样的，但是也要单独运行。</li>
+</ol>
+<p>docker 提出了一整套的解决方案来优化和解决了这些问题</p>
+<ol>
+<li>虚拟机主体庞大：docker 可以直接使用宿主机的操作系统，每一个docker只提供运行的必要库和应用。</li>
+<li>启动时间长：由于宿主机的操作系统已被加载，所以启动docker没有启动虚拟机时加载linux的流程。</li>
+<li>结构冗余：docker 将每个运行时环境进行拆分，一个docker可以运行多个依赖，而依赖之间也可以共享，解决了结构冗余的问题。</li>
+</ol>
 <blockquote>
 <p>参考地址 <a href="https://docs.docker.com/engine/install/centos/">https://docs.docker.com/engine/install/centos/</a></p>
 </blockquote>
