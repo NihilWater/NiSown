@@ -41,6 +41,7 @@
         margin-top: 30px;
         .artical{
             flex-grow: 1;
+            padding-right: 10px;
         }
     }
 }
@@ -73,6 +74,13 @@
     width: 100%;
 }
 
+.card-item:nth-child(3), .card-item:nth-child(4), .card-item:nth-child(5), .card-item:nth-child(6){
+    display:none;
+}
+.ni_ib_main_right{
+    display:block;
+}
+
 @media screen and (max-width:1060px){
     .pic-text{
         flex-wrap: wrap;
@@ -81,8 +89,11 @@
         width:100%;
         justify-content: space-between;
         .card-item{
-            margin-top: 1rem;
+            display: none;
         }
+    }
+    .column_item{
+        width: 100%;
     }
     #ni_index_body section .ni_ib_main_right{
         display:none;
@@ -111,20 +122,23 @@
             height:180px;
         }
     }
-    .card-item:nth-child(3), .card-item:nth-child(4), .card-item:nth-child(5), .card-item:nth-child(6){
-        display:none;
-    }
-    .ni_ib_main_right{
-        display:block;
-    }
 }
 @media screen and (min-width:1160px){
+    #ni_news{
+        padding-left: 6%;
+    }
     .container{
         width:1140px
+    }
+    .container .ni_ib_main .artical{
+        padding-right: 50px;
     }
 }
 
 @media screen and (min-width:1280px){
+    #ni_news{
+        padding-left: 10px;
+    }
     .container{
         width:1260px
     }
@@ -144,6 +158,9 @@
     }
     .artical{
         columns: 2; // 默认为4
+    }
+    .container .ni_ib_main .artical{
+        padding-right: 30px;
     }
 }
 

@@ -1,7 +1,7 @@
 @import '../markdown/markdown.scss';
 
 .column_item{
-    width: 90%;
+    display: inline-block;
     padding: 10px auto;
     margin: 0px auto 10px 0;
     .main_text{
@@ -49,7 +49,7 @@
     border-radius: 10px;
 }
 
-@media screen and (max-width:990px){
+@media screen and (max-width:1160px){
     .column_item{
         width: 100%;
         .artical_item{
@@ -71,7 +71,7 @@
     }
 }
 
-@media screen and (min-width:990px){
+@media screen and (min-width:1160px){
     .artical_item{
         display:flex;
         .img{
@@ -95,12 +95,12 @@
 
 @media screen and (min-width:1560px){
     .column_item{
-        padding: 12px 10px 5px 10px;
+        padding: 0 10px 20px 10px;
+        margin-right: 4%;
     }
     .artical_item{
         break-inside: avoid;
         flex-wrap: wrap;
-        margin-top: 1.4rem;
         .img{
             width: 100%;
             height: auto;
