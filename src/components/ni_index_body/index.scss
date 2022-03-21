@@ -41,7 +41,6 @@
         margin-top: 30px;
         .artical{
             flex-grow: 1;
-            padding-right: 10px;
         }
     }
 }
@@ -95,6 +94,7 @@
     .column_item{
         width: 100%;
     }
+
     #ni_index_body section .ni_ib_main_right{
         display:none;
     }
@@ -121,6 +121,9 @@
             width: 288px;
             height:180px;
         }
+    }
+    .container .ni_ib_main .artical{
+        padding-right: 10px;
     }
 }
 @media screen and (min-width:1160px){
