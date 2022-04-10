@@ -12,9 +12,6 @@ class NiCarousel extends React.Component {
         /* 切换轮播图方法 */
         changeCarouselTo(carouseId, to_idx) {
             let that = this;
-            // console.log(this.state[carouseId +'RealItems'])
-            // console.log(this.state[carouseId + 'Current'])
-            // console.log(that.state[carouseId + "Size"])
             // 设置当前的轮播图透明度为0, 导航栏的透明度为0.6
             this.state[carouseId +'RealItems'][that.state[carouseId + 'Current']].style.opacity = 0;
             this.state[carouseId +'RealItems']
