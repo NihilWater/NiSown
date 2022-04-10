@@ -1,19 +1,20 @@
 import React from 'react';
 import "./index.scss";
+import "./body_horizontal_layout.scss";
 import 'highlight.js/styles/nord.css';
 import axios from 'axios';
 import HostInfo from "../body_items/ni_ib_main/host_info/host_info";
-import Articals from "../body_items/articals/articals";
+import Articals from "../body_items/articles/articles";
 import PageKeys from '../body_items/page_keys/page_keys';
 import NiCarousel from '../ni_carousel/ni_carousel';
 import Labels from '../body_items/ni_ib_main/labels/labels';
-import HotArtical from '../body_items/ni_ib_main/hot_artical/hot_artical';
+import HotArtical from '../body_items/ni_ib_main/hot_article/hot_article';
 
 class NiIndexBody extends React.Component {
 
     state = {
         // carouselItems:[],    // 轮播图序列
-        articals: [],        // 文章列表数据
+        articles: [],        // 文章列表数据
         isMarkdown: false,
         html: <></>,
         currentPage: 1,
@@ -23,8 +24,8 @@ class NiIndexBody extends React.Component {
     /* 获取数据 */
     componentDidMount() {
         console.log(this.props.href)
-        if (this.props.href.articalid) {
-            this.readArtical(`${this.props.href.topic}/${this.props.href.subtopic}/${this.props.href.articalid}`)
+        if (this.props.href.articleid) {
+            this.readArtical(`${this.props.href.topic}/${this.props.href.subtopic}/${this.props.href.articleid}`)
         } else {
             this.getArticalList(1);
         }
@@ -51,14 +52,14 @@ class NiIndexBody extends React.Component {
         let that = this;
         axios({
             method: "GET",
-            url: "/json/artical" + pageNumber + ".json",
+            url: "/data/article" + pageNumber + ".json",
             async: "/"
         }).then(res => {
             // 初始化数据
             console.log(res)
             that.setState({
                 currentPage: pageNumber,
-                articals: res.data.articals
+                articles: res.data.articles
             })
         })
     }
@@ -84,7 +85,7 @@ class NiIndexBody extends React.Component {
     /* 点击查看莫一篇文章触发事件 */
     onReadClick = (path) => {
         console.log(path)
-        this.props.history.push(`/artical/${path}`)
+        this.props.history.push(`/article/${path}`)
         this.readArtical(path)
     }
 
@@ -98,7 +99,7 @@ class NiIndexBody extends React.Component {
 
     render() {
         return (
-            <div id="ni_index_body">
+            <div id="ni_index_body" class='body_horizontal_layout'>
                 <section id="ni_index_body_s">
                     <div className="container">
                         <div style={{ width: '100%', height: '4rem' }}></div>
@@ -120,12 +121,12 @@ class NiIndexBody extends React.Component {
                             <div style={{ width: '100%' }}>
                                 {this.state.isMarkdown && <div class="goback" onClick={this.backArticals}>&lt;&lt;&lt;返回</div>}
                                 {this.state.isMarkdown ? <div className='markdown' dangerouslySetInnerHTML={{ __html: this.state.html }}></div>
-                                    : <div class="artical"><Articals data={this.state.articals} callback={this.onReadClick} /></div>}
+                                    : <div class="article"><Articals data={this.state.articles} callback={this.onReadClick} /></div>}
                                 {!this.state.isMarkdown && <PageKeys currentPage={this.state.currentPage} maxPage="50" callback={this.getArticalList} />}
                             </div>
                             <div class="ni_ib_main_right">
                                 <HostInfo />
-                                <Labels />
+                                <Labels history={this.props.history}/>
                                 <HotArtical />
                             </div>
                         </div>

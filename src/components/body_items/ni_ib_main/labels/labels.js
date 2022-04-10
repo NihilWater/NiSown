@@ -14,7 +14,7 @@ class Labels extends React.Component{
 
     /* 异步获取标签 */
     getLabels(){
-        axios.get("/json/labels.json").then(
+        axios.get("/data/lables.json").then(
             res =>{
                 console.log(res.data.labels)
                 this.setState({
@@ -24,11 +24,16 @@ class Labels extends React.Component{
         )
     }
 
+    /* 跳转方法 */
+    goSpecial = (href)=>{
+        this.props.history.push(`/special/${href}/0/0`)
+    }
+
     render(){
         return (
             <div className= "labels">
                 {this.state.labels.map(item =>{
-                    return <div style={{backgroundColor: colors.colors[Math.floor(Math.random()*4)]}}>{item.label}</div>
+                    return <div style={{backgroundColor: colors.colors[Math.floor(Math.random()*4)]}} onClick={()=>this.goSpecial(item.href)}>{item.label}</div>
                 })}
             </div>
         )

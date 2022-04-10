@@ -2,7 +2,7 @@ name: Deployment
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   deploy:
     runs-on: windows-latest
@@ -38,7 +38,9 @@ jobs:
       run: npm install
 
     - name: Build page
-      run: CI=false && npm run build
+      run: |
+        CI=false && npm run build
+        cp build/index.html build/404.html
       shell: bash
       
     - name: Deploy

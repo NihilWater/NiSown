@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
-import "./hot_artical.scss";
+import "./hot_article.scss";
 import colors from './color.json';
 
 class HotArtical extends React.Component{
     state = {
-        articals :[]
+        articles :[]
     }
     constructor(props){
         super(props);
@@ -14,11 +14,11 @@ class HotArtical extends React.Component{
 
     /* 异步获取标签 */
     getArticals(){
-        axios.get("/json/hot_articals.json").then(
+        axios.get("/json/hot_articles.json").then(
             res =>{
-                console.log(res.data.articals)
+                console.log(res.data.articles)
                 this.setState({
-                    articals:res.data.articals
+                    articles:res.data.articles
                 })
             }
         )
@@ -26,9 +26,9 @@ class HotArtical extends React.Component{
 
     render(){
         return (
-            <section className= "hot_articals">
+            <section className= "hot_articles">
                 <ul >
-                    {this.state.articals.map((item, idx) => <li style={{backgroundColor: colors.colors[Math.floor(Math.random()*4)]}}>
+                    {this.state.articles.map((item, idx) => <li style={{backgroundColor: colors.colors[Math.floor(Math.random()*4)]}}>
                                 <h3>{idx + 1}:</h3>
                                 <span>{item.title}</span>
                             </li>

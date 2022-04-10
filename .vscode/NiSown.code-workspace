@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
-		"pasteImage.path": "${projectRoot}/public/img/artical",
+		"pasteImage.path": "${projectRoot}/public/img/article",
+		"[markdown]": {
+			"editor.quickSuggestions": true
+		}
 	}
 }

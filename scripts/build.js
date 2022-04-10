@@ -27,6 +27,8 @@ const printHostingInstructions = require('react-dev-utils/printHostingInstructio
 const FileSizeReporter = require('react-dev-utils/FileSizeReporter');
 const printBuildError = require('react-dev-utils/printBuildError');
 
+const articleService = require('./backend/service/article')
+
 const measureFileSizesBeforeBuild =
   FileSizeReporter.measureFileSizesBeforeBuild;
 const printFileSizesAfterBuild = FileSizeReporter.printFileSizesAfterBuild;
@@ -210,8 +212,24 @@ function build(previousFileSizes) {
 }
 
 function copyPublicFolder() {
+  let articleImgPath = path.join(paths.appPublic, 'img', 'article')
+  let file_filter = articleService.filtePrivateBuild();
+
   fs.copySync(paths.appPublic, paths.appBuild, {
     dereference: true,
-    filter: file => file !== paths.appHtml,
+    filter: file => {
+      console.log(file)
+      if(file.startsWith(articleImgPath)){
+        for(let i=0; i<file_filter.filter_images.length; i++){
+          if(file.endsWith(file_filter.filter_images[i])){
+            file_filter.filter_images.splice(i,1)
+            return false;
+          }
+        }
+      }else if(file.endsWith("_private.md")){
+        return false;
+      }
+      return file !== paths.appHtml
+    },
   });
 }

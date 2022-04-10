@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Index from './pages/index';
 import About from './pages/about';
 import Login from './pages/login';
+import SpecialPage from './pages/special/special';
 import {Router, Route, Switch, withRouter} from 'react-router-dom';
 import {createBrowserHistory} from 'history';
 
@@ -23,7 +24,8 @@ class Main extends React.Component {
       <Switch>
         <Route path="/about" component={About} />
         <Route path="/login" component={Login} />
-        <Route path="/artical/:topic/:subtopic/:articalid" component={Index} />
+        <Route path="/article/:topic/:subtopic/:articleid" component={Index} />
+        <Route path="/special/:topic/:subtopic/:articleid" component={SpecialPage} />
         <Route path='/' component={Index} />
       </Switch>
       </Router>

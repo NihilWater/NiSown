@@ -19,7 +19,7 @@ class NiNav extends React.Component {
             <div className="navigate">
                 <div className={ this.state.isNavOpened? "navmainbody navopen":"navmainbody"}>
                     <ul className="navmain" >
-                        <li><Link href="#">HOME</Link></li>
+                        <li><Link to="/">HOME</Link></li>
                         <li>
                             <Link href="#">世空间</Link>
                             <ol className="navsecond" id="xykj">
@@ -33,7 +33,7 @@ class NiNav extends React.Component {
                                 <li><Link href="#">Web前端</Link></li>
                                 <li><Link href="#">花哨后端</Link></li>
                                 <li><Link href="#">数据结构</Link></li>
-                                <li><Link href="#">深度学习</Link></li>
+                                <li><Link to="/special/ai/0/0">深度学习</Link></li>
                                 <li><Link href="#">操作系统</Link></li>
                                 <li><Link href="#">数学相关</Link></li>
                                 <li><Link href="#">小小程序</Link></li>

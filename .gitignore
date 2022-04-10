@@ -6,6 +6,7 @@ bin-release/
 build/
 node_modules/
 .eslintcache
+/public/data/
 
 
 # Other files and folders

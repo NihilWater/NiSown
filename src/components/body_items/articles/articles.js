@@ -1,6 +1,6 @@
 import React from 'react';
 
-import "./articals.scss"
+import "./articles.scss"
 
 class Artical extends React.Component {
 
@@ -11,7 +11,7 @@ class Artical extends React.Component {
     render() {
         return this.props.data.map(item => {
             return (<div className='column_item'>
-                <div class="artical_item">
+                <div class="article_item">
                     <div style={{ backgroundImage: "url(" + item.img + ")" }} class="img">
                         {item.img !== '' && <img src={item.img} />}
                     </div>

@@ -1,0 +1,72 @@
+.ni_ib_main_left{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px 0 0 10px;
+    .drawer-p{
+        background: linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,0.02));
+        border-radius: 0.6rem;
+        border-top: 2px solid rgba(255,255,255,0.4);
+        min-width: 100%;
+        display: block;
+        cursor: pointer;
+    }
+    .drawer-c{
+        margin: 0 26px 0 26px;
+        overflow: hidden;
+        max-width: 240px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        height: 0;
+        transition: 0.2s;
+        cursor: pointer;
+    }
+    .drawer-k{
+        display: none;
+        cursor: pointer;
+    }
+    .drawer-k:checked ~ .drawer-c{
+        height: 1.7rem;
+    }
+
+    .drawer-k2{
+        position: absolute;
+        height: 100%;
+        width: 26px;
+        top: 0;
+        cursor: pointer;
+    }
+    .drawer-k2:hover{
+        display:none;
+        background: url(./img/up.png) no-repeat center;
+        background-size: 90%;
+        animation: ani_updown 1s infinite;
+    }
+    .drawer-k:checked ~ .drawer-k2{
+        display: block;
+    }
+
+    .subtitle{
+        font-size: 1.2rem;
+        width: max-content;
+        min-width: 100%;
+        position: relative;
+    }
+}
+.ni_ib_main_left + div{
+    border-radius: 0 10px 10px 0;
+}
+.markdown{
+    flex-grow: 1;
+}
+#ni_special{
+    background: linear-gradient(45deg, #fbcfff, #ff98c8, #ffeab8, #ffc269);
+}
+
+@keyframes ani_updown {
+    from {background-position:0 58%;}
+    to {background-position: 0 60%;}
+}

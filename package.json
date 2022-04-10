@@ -1,7 +1,6 @@
 {
   "name": "nisnow",
   "version": "0.1.0",
-  "homepage": ".",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
@@ -66,8 +65,10 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "test2": "node scripts/test2.js",
-    "insert": "node scripts/insert.js"
+    "parse": "node scripts/parse.js",
+    "insert": "node scripts/insert.js",
+    "back": "node scripts/back.js",
+    "toword": "node scripts/toWord.js"
   },
   "eslintConfig": {
     "extends": [
@@ -88,7 +89,9 @@
     ]
   },
   "devDependencies": {
+    "@iktakahiro/markdown-it-katex": "^4.0.1",
     "axios": "^0.21.1",
+    "markdown-it": "^12.3.2",
     "node-sass": "^7.0.0",
     "sass-loader": "^12.4.0",
     "webpack": "^5.65.0",

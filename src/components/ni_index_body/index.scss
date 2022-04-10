@@ -1,24 +1,6 @@
 #ni_index_body{
     width: 100%;
     background-color: white;
-    section{
-        overflow-y: scroll;
-        height: 100%;
-        font-family: Baskerville,Georgia,"Liberation Serif","Source Han Serif Semibold",Kaiti SC,STKaiti,AR PL UKai CN,AR PL UKai HK,AR PL UKai TW,AR PL UKai TW MBE,AR PL KaitiM GB,KaiTi,KaiTi_GB2312,DFKai-SB,TW\\-Kai,serif;
-        .ni_ib_main_right{
-            width: 300px;
-            display: flex;
-            flex-direction: column;
-            .hot_articals{
-                flex-grow: 1;
-            }
-        }
-    }
-    section::-webkit-scrollbar {
-        width: 2px;
-        height: 0;
-        color: transparent;
-    }
     .goback{
         background: #f27a0032;
         transform: translateY(3rem);
@@ -39,7 +21,7 @@
     .ni_ib_main{
         display:flex;
         margin-top: 30px;
-        .artical{
+        .article{
             flex-grow: 1;
         }
     }
@@ -122,7 +104,7 @@
             height:180px;
         }
     }
-    .container .ni_ib_main .artical{
+    .container .ni_ib_main .article{
         padding-right: 10px;
     }
 }
@@ -133,7 +115,7 @@
     .container{
         width:1140px
     }
-    .container .ni_ib_main .artical{
+    .container .ni_ib_main .article{
         padding-right: 50px;
     }
 }
@@ -159,10 +141,10 @@
     .card-item:nth-child(5), .card-item:nth-child(6){
         display:block;
     }
-    .artical{
+    .article{
         columns: 2; // 默认为4
     }
-    .container .ni_ib_main .artical{
+    .container .ni_ib_main .article{
         padding-right: 30px;
     }
 }
